@@ -17,7 +17,14 @@
         <li><a href="#">Item 3</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><span class="navbar-text">Hi, M</span></li>
+        <li><span class="navbar-text"> 
+            @if(empty($admin))
+              <!-- You are now logged in as a gueast -->
+            @else
+              Hi, {{ $admin->email }}
+            @endif
+          </span>
+        </li>
         <li><a href="{{ route('auth.logout') }}">Log out</a></li>
       </ul>
     </div>
