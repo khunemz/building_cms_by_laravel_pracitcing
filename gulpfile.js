@@ -4,5 +4,5 @@ elixir.config.assetsDir = 'public/themes/default/assets/';
 elixir.config.publicPath = elixir.config.asstsPath;
 
 elixir(function(mix) {
-    mix.sass('/backend.scss');
+    mix.sass('/backend.scss' , 'public/themes/default/assets/css');
 });
