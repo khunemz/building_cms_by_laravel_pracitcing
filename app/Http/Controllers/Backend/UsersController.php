@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserRequest as StoreUserRequest;
 use App\Http\Requests;
 
 class UsersController extends Controller
@@ -31,9 +32,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+        return view('backend.users.form' , compact('user', '$user'));
     }
 
     /**
@@ -42,9 +43,10 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        //
+        $this->users->create($request->only('name', 'email', 'password'));
+        return redirect(route('backend.users.index'))->with('status', 'User has beend created');
     }
 
     /**
@@ -66,7 +68,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = $this->users->findOrFail($id);
+        return view('backend.users.form', compact('user'));
     }
 
     /**

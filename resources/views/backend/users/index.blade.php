@@ -4,6 +4,7 @@
 
 
 @section('content')
+  <a href="{{ route('backend.users.create') }}" class="btn btn-primary">Create new User</a>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -34,4 +35,6 @@
       @endforeach
     </tbody>
   </table>
+
+  {!! $users->render() !!}
 @endsection
