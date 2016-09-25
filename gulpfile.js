@@ -8,6 +8,5 @@ elixir(function(mix) {
     mix.copy('node_modules/bootstrap/dist/css/*.css'
       , 'public/themes/default/assets/css');
 
-
-    mix.styles(['bootstrap.min.css' , 'backend.css' ], 'public/themes/default/assets/style/');
+    mix.styles(['bootstrap.min.css' , 'backend.css' , ''], 'public/themes/default/assets/style/');
 });

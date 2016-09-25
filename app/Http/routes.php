@@ -15,3 +15,10 @@ Route::get('backend/dashboard', [ 'as' => 'backend.dashboard', 'uses' => 'Backen
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('backend/users', 'Backend\UsersController');
+
+Route::get('backend/users/{users}/confirm', [
+  'as' => 'backend.users.confirm' , 'uses' => 'Backend\UsersController@confirm'
+  ]);
+
