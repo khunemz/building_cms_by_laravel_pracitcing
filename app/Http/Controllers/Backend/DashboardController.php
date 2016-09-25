@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Http\Controller\Backend;
+namespace App\Http\Controllers\Backend;
 
 class DashboardController extends Controller
 {
