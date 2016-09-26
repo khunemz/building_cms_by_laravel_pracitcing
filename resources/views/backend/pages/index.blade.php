@@ -11,6 +11,7 @@
         <td>Title</td>
         <td>URI</td>
         <td>Name</td>
+        <td>Template</td>
         <td>Edit</td>
         <td>Delete</td>
       </tr>
@@ -28,6 +29,7 @@
         </td>
         <td>{{$page->url}}</td>
         <td>{{$page->name}}</td>
+        <td>{{$page->template}}</td>
         <td>
           <a href="{{ route('backend.pages.edit', $page->id) }}"><span class="glyphicon glyphicon-edit"></span></a>
         </td>
