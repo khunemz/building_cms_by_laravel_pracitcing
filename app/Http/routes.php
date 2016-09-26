@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('backend/users', 'Backend\UsersController');
+Route::resource('backend/users', 'Backend\UsersController', ['except' => ['show']]);
 
 Route::get('backend/users/{users}/confirm', [
   'as' => 'backend.users.confirm' , 'uses' => 'Backend\UsersController@confirm'
