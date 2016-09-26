@@ -13,7 +13,7 @@
       <div class="navbar-header"><a href="/" class="navbar-brand">SDS</a></div>
       <ul class="nav navbar-nav">
         <li><a href="{{ route('backend.users.index') }}">Users</a></li>
-        <li><a href="#">Item 2</a></li>
+        <li><a href="{{ route('backend.pages.index') }}">Pages</a></li></li>
         <li><a href="#">Item 3</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -32,7 +32,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <h3>
           @yield('title')
         </h3>
