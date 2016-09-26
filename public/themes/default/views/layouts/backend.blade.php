@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>@yield('title') Fucking shit project !!!</title>
   <link rel="stylesheet" href="{{ theme('style/all.css') }}">
+  <script src="{{ theme('script/all.js') }}"></script>
+
 </head>
 <body>
   <div class="navbar nav-static-top navbar-default">
@@ -57,5 +59,6 @@
       </div>
     </div>
   </div>
+
 </body>
 </html>

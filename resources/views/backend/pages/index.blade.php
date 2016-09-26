@@ -1,9 +1,10 @@
-@extends('layouts.auth')
+@extends('layouts.backend')
 
 @section('title', 'Pages')
 
 
 @section('content')
+  <a href="{{route('backend.pages.create')}}" class="btn btn-primary">Create new page</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -25,7 +26,7 @@
         <td>
           <a href="{{ route('backend.pages.edit', $page->id) }}">{{$page->title}}</a>
         </td>
-        <td>{{$page->uri}}</td>
+        <td>{{$page->url}}</td>
         <td>{{$page->name}}</td>
         <td>
           <a href="{{ route('backend.pages.edit', $page->id) }}"><span class="glyphicon glyphicon-edit"></span></a>

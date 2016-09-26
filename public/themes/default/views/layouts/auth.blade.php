@@ -44,5 +44,8 @@
       <div class="col-md-2"></div>
     </div>
   </div>
+  
+  <script src="{{ theme('script/all.js') }}"></script>
+
 </body>
 </html>
