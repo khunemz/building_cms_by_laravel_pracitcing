@@ -25,7 +25,8 @@
       @foreach($pages as $page)
       <tr>
         <td>
-          <a href="{{ route('backend.pages.edit', $page->id) }}">{{$page->title}}</a>
+          {!! $page->linkToPaddedTitle(route('backend.pages.edit', $page->id)) !!}
+            
         </td>
         <td>{{$page->url}}</td>
         <td>{{$page->name}}</td>

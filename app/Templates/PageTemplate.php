@@ -2,6 +2,7 @@
 
 namespace App\Templates;
 use Illuminate\View\View;
+
 class PageTemplate extends AbstractTemplate
 {
   protected $view = 'page';
