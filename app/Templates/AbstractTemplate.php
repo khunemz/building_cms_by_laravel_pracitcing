@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Template;
+namespace App\Templates;
 use Illuminate\View\View;
 
 abstract class AbstractTemplate
