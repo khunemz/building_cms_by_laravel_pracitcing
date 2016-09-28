@@ -1,11 +1,15 @@
 <?php 
 
 namespace App\Http\Controllers\Backend;
+use App\Post;
+use App\User;
 
 class DashboardController extends Controller
 {
   
-  public function index () {
-    return view('backend.dashboard');
+  public function index (Post $post) {
+    $posts = $posts->orderBy('updated_at', 'desc')->take(5)->get();
+    $users = $users->whereNotNull('last_login_at')->orderBy('last_login_at')->take(5)->get();
+    return view('backend.dashboard', compact('posts', 'users'));
   }
 }

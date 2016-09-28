@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.1.*",
         "guzzlehttp/guzzle": "^6.2",
         "baum/baum": "^1.1",
-        "lewis/presenter": "^1.0"
+        "lewis/presenter": "^1.0",
+        "league/commonmark": "^0.15.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
