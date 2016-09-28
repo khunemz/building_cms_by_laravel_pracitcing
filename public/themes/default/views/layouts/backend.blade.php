@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ route('backend.users.index') }}">Users</a></li>
         <li><a href="{{ route('backend.pages.index') }}">Pages</a></li></li>
-        <li><a href="#">Item 3</a></li>
+        <li><a href="{{ route('backend.blog.index') }}">Blogs</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><span class="navbar-text"> 
