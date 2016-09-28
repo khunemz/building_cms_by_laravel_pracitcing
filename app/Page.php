@@ -18,7 +18,7 @@ class Page extends Node
       $this->makeChildOf($orderPage);
     }
   }
-  protected $fillable = ['title' , 'content', 'name', 'url', 'template'];
+  protected $fillable = ['title' , 'content', 'name', 'url', 'template' , 'hidden'];
 
   public function setNameAttriute ($value) {
     $this->attributes['name'] = $value ? : null;

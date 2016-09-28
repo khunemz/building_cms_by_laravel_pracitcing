@@ -7,7 +7,7 @@
   <a href="{{route('backend.pages.create')}}" class="btn btn-primary">Create new page</a>
   <table class="table table-striped">
     <thead>
-      <tr>
+      <tr class="{{ $page->hidden ? 'warning' : '' }}">
         <td>Title</td>
         <td>URI</td>
         <td>Name</td>

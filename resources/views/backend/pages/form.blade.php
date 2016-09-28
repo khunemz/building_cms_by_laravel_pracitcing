@@ -46,13 +46,23 @@
         ])!!}
       </div>
       <div class="col-md-5">
-        {!! Form::select('orderPage' , ['padded_title' => ''] + $orderPage->lists('title', 'id')->toArray(), null ,['class' => 'form-control'] ) !!}
+        {!! Form::select('orderPage' , ['padded_title' => ''] + $orderPages->lists('title', 'id')->toArray(), null ,['class' => 'form-control'] ) !!}
       </div>
     </div>
 
     <div class="form-group">
       {!! Form::label('content') !!}
       {!! Form::textarea('content', null ,['class' => 'form-control']) !!}
+    </div>
+
+    <div class="checkbox">
+      <label for="
+      {!! Form::checkbox('hidden') !!}">
+      Hide page from navigation
+      <span class="help-block">
+        Checking this for hidding page from navligation!!
+      </span>
+      </label>
     </div>
 
     {!! Form::submit($page->exists ? 'Save page' : 'Create new Page', ['class' => 'btn btn-primary']) !!}

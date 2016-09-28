@@ -7,6 +7,9 @@ return [
   ],
 
   'templates' => [
-    'home' => App\Templates\HomeTemplate::class
+    'home' => App\Templates\HomeTemplate::class,
+    'blog' => App\Templates\BlogTemplate::class,
+    'blog.post' => App\Templates\BlogPostTemplate::class,
+
   ]
 ];
