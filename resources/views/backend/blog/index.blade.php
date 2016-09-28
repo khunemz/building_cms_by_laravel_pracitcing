@@ -4,7 +4,7 @@
 
 
 @section('content')
-  <a href="{{ route('backend.posts.create') }}" class="btn btn-primary">Create new posts</a>
+  <a href="{{ route('backend.blog.create') }}" class="btn btn-primary">Create new posts</a>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,7 +20,7 @@
       @foreach($posts as $post)
         <tr class="{{$post->published_highlight}}">
           <td>
-            <a href="{{ route('backend.posts.edit', $post->id) }}">
+            <a href="{{ route('backend.blog.edit', $post->id) }}">
               {{$post->title}}
             </a>
           </td>
@@ -34,10 +34,10 @@
             {{$post->published_date}}
           </td>
           <td>
-            <a href="{{ route('backend.posts.edit', $post->id) }}"><span class="glyphicon glyphicon-edit"></span></a>
+            <a href="{{ route('backend.blog.edit', $post->id) }}"><span class="glyphicon glyphicon-edit"></span></a>
           </td>
           <td>
-            <a href="{{ route('backend.posts.confirm', $post->id) }}"><span class="glyphicon glyphicon-remove"></span></a>
+            <a href="{{ route('backend.blog.confirm', $post->id) }}"><span class="glyphicon glyphicon-remove"></span></a>
           </td>
         </tr>
       @endforeach

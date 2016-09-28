@@ -13,10 +13,11 @@ class PagePresenter extends AbstractPresenter
   }published_highlight
 
   public function publishedHightlight () {
-    if ($this->published_at) {
-      return $this->published_at->toFormattedDateString();
+    if ($this->published_at && $this->published_at->isFuture()) {
+      return 'info';
+    }else if (! $this->published_at) {
+      return 'warning'
     }
-    return 'Not Published yet';
   }
 
 }

@@ -4,5 +4,9 @@
     "bootstrap-sass": "^3.3.7",
     "gulp": "^3.8.8",
     "laravel-elixir": "^1.0.0"
+  },
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.42",
+    "moment": "^2.15.1"
   }
 }

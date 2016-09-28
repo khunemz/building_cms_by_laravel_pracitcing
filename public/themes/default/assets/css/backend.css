@@ -8,3 +8,8 @@
 body {
   padding-bottom: 2rem;
 }
+
+.excerpt .CodeMirror {
+  height: 150px;
+  min-height: 150px;
+}

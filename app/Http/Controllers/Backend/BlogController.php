@@ -29,9 +29,11 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Post $post)
     {
-        //
+        return view('backend.blog.form', compact(
+            'post'
+            ));
     }
 
     /**
@@ -40,9 +42,11 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\StorePostRequest $request)
     {
-        //
+        $this->posts->create(['author_id' => auth()->user()->id] + $request->only('title', 'slug', 'published_at', 'body', 'excerpt'));
+
+        return redirect(route('backend.blog.index'))->with('status', 'Created');
     }
 
     /**
@@ -64,7 +68,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = $this->posts->findOrFail($id);
+        return view('backend.blog.form', compact('post'));
     }
 
     /**
@@ -74,13 +79,16 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UpdatePostRequest $request, $id)
     {
-        //
+        $post = $this->posts->findOrFail($id);
+        $post->fill($request->only('title' , 'slug' , 'published_at', 'body', 'excerpt'))->save();
+        return redirect(route('backend.blog.edit', $post->id))->with('status' , 'updated');
     }
 
     public function confirm ($id) {
-      
+      $post = $this->posts->findOrFail($id);
+      return view('backend.blog.confirm' , compact('post'));
     }
 
     /**
@@ -91,7 +99,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $post = $this->posts->findOrFail($id);
+      $post->delete();
+      return redirect(route('backend.blog.index'))->with('status', 'Deleted');
     }
 }
-des
