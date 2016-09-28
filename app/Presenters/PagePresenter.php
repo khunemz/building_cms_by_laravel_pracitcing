@@ -5,6 +5,9 @@ use Lewis\Presenter\AbstractPresenter;
 
 class PagePresenter extends AbstractPresenter
 {
+  public function uriWildcard () {
+    return $this->uri . '*';
+  }
   public function prettryUrl () {
     return '/'.ltrim($this->url , '/');
   }
